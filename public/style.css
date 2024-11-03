@@ -1,0 +1,154 @@
+/* Full-screen overlay */
+#welcomeOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 1s ease; /* Smooth fade-out */
+    z-index: 1000; /* Ensure overlay is above other elements */
+}
+
+/* Centered welcome text */
+#welcomeText {
+    font-size: 2em;
+    color: gray;
+    opacity: 0; /* Start invisible */
+    animation: fadeInText 1s forwards 0.5s; /* Fade in after 0.5s delay */
+}
+
+/* Keyframe for text fade-in */
+@keyframes fadeInText {
+    to {
+        opacity: 1;
+    }
+}
+
+
+#main-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+#gallery-container {
+    width: 66.67%; /* Left two-thirds of the screen */
+    height: 100vh;
+}
+
+#gallery {
+    width: 100%;
+    height: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: flex;
+}
+
+#chat-overlay {
+    position: fixed;
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    width: 30%; /* Right third of the screen */
+    height: 90%;
+    background-color: #f0f0f0; /* Optional: background color for the chat */
+    display: flex;
+    flex-direction: column;
+    padding: 2.5%;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+}
+
+#chat-overlay.visible {
+    display: block;
+}
+
+#chat-overlay.hidden {
+    display: none;
+}
+
+#chat-title-section {
+    margin-bottom: 20px;
+}
+
+#chat-close-btn {
+    position: absolute;
+    right: 10%;
+}
+
+#chat-title {
+    font-size: 1.3em;
+}
+
+#chat-content {
+    height: 88%;
+}
+
+#chat-messages {
+    height: 100%;
+    overflow: scroll;
+}
+
+.chat-message {
+    background: #4f455e;
+    width: 70%;
+    color: #ffffff;
+    padding: 15px 20px;
+    margin: 10px 0;
+    font-size: 1em;
+    border-radius: 24px;
+}
+
+.visitor-message {
+    float: left;
+}
+
+.user-message {
+    float: right;
+}
+
+#chat-input {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+}
+
+#user-chat-input {
+    width: 100%;
+}
+
+#artwork-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none; /* Default state is hidden */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+}
+
+#artwork-overlay.visible {
+    display: flex; /* Flex to center content */
+    opacity: 1;
+}
+
+#artwork-overlay.hidden {
+    display: none;
+    opacity: 0;
+}
